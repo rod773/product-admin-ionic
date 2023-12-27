@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  form = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
+  ngOnInit() {}
 }
